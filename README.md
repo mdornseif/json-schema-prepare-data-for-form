@@ -1,4 +1,4 @@
-![NPM License](https://img.shields.io/npm/l/json-schema-prepare-data-for-form)
+[![NPM License](https://img.shields.io/npm/l/json-schema-prepare-data-for-form)](https://www.npmjs.com/package/json-schema-prepare-data-for-form)
 [![NPM Version](https://img.shields.io/npm/v/json-schema-prepare-data-for-form)](https://www.npmjs.com/package/json-schema-prepare-data-for-form)
 [![Last Commit](https://img.shields.io/github/last-commit/mdornseif/json-schema-prepare-data-for-form)](https://github.com/mdornseif/json-schema-prepare-data-for-form)
 
