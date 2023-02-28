@@ -87,7 +87,6 @@ test('jsonSchemaDataMerge does the right thing', () => {
 `)
 })
 
-
 test('prepareDataForForm', () => {
   const m6 = prepareDataForForm(TESTSCHEMA, TESTENTITY)
   expect(m6).toMatchInlineSnapshot(`

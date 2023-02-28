@@ -1,29 +1,6 @@
 {
-  "author": "Dr. Maximillian Dornseif",
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.2.4",
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/lodash.merge": "^4.6.7",
-    "@types/lodash.mergewith": "^4.6.7",
-    "dts-cli": "^1.6.3",
-    "husky": "^8.0.3",
-    "json-schema": "^0.4.0",
-    "json-schema-default": "^1.0.1",
-    "json-schema-empty-arrays": "^1.0.1",
-    "json-schema-empty-strings": "^1.0.5",
-    "lodash.merge": "^4.6.2",
-    "size-limit": "^8.2.4",
-    "tslib": "^2.5.0",
-    "typescript": "^4.9.5",
-    "vitest": "^0.29.1"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "name": "json-schema-prepare-data-for-form",
+  "version": "1.0.2",
   "keywords": [
     "jsonschema",
     "rjsf",
@@ -31,15 +8,36 @@
     "defaults"
   ],
   "homepage": "https://github.com/mdornseif/json-schema-prepare-data-for-form/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdornseif/json-schema-prepare-data-for-form.git"
+  },
+  "license": "MIT",
+  "author": "Dr. Maximillian Dornseif",
+  "main": "dist/index.js",
+  "module": "dist/json-schema-prepare-data-for-form.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "analyze": "size-limit --why",
+    "build": "dts build",
+    "doc:build": "npx typedoc@0.23  --skipErrorChecking  src/index.ts",
+    "doc:publish": "npx gh-pages -m \"[ci skip] Updates\" -d docs",
+    "lint": "dts lint",
+    "prepare": "husky install",
+    "release": "npx standard-version",
+    "size": "size-limit",
+    "start": "dts watch",
+    "test": "TZ=utc vitest --passWithNoTests"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "dts lint"
     }
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "license": "MIT",
   "lint-staged": {
     "*{css,scss,md,markdown,json,yaml,yml,graphql,html}": "prettier -w",
     "*{js,jsx,ts,tsx}": [
@@ -47,14 +45,6 @@
       "yarn lint --fix"
     ],
     "package.json": "sort-package-json"
-  },
-  "main": "dist/index.js",
-  "module": "dist/json-schema-prepare-data-for-form.esm.js",
-  "name": "json-schema-prepare-data-for-form",
-  "peerDependencies": {
-    "json-schema-default": "^1.0.1",
-    "json-schema-empty-arrays": "^1.0.1",
-    "json-schema-empty-strings": "^1.0.5"
   },
   "prettier": {
     "printWidth": 110,
@@ -68,20 +58,38 @@
       "next"
     ]
   },
-  "repository":{     "type": "git",
-  "url":  "https://github.com/mdornseif/json-schema-prepare-data-for-form.git"
-},
-  "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
-    "doc:build": "npx typedoc@0.23  --skipErrorChecking  src/index.ts",
-    "doc:publish": "npx gh-pages -m \"[ci skip] Updates\" -d docs",
-    "lint": "dts lint",
-    "prepare": "husky install",
-    "release": "npx standard-version",
-    "size": "size-limit",
-    "start": "dts watch",
-    "test": "TZ=utc vitest --passWithNoTests"
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "clean-deep": "^3.4.0",
+    "lodash.mergewith": "^4.6.2"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/lodash.mergewith": "^4.6.7",
+    "dts-cli": "^1.6.3",
+    "husky": "^8.0.3",
+    "json-schema": "^0.4.0",
+    "json-schema-default": "^1.0.1",
+    "json-schema-empty-arrays": "^1.0.1",
+    "json-schema-empty-strings": "^1.0.5",
+    "lint-staged": "^13.1.2",
+    "lodash.merge": "^4.6.2",
+    "size-limit": "^8.2.4",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "vitest": "^0.29.1"
+  },
+  "peerDependencies": {
+    "json-schema-default": "^1.0.1",
+    "json-schema-empty-arrays": "^1.0.1",
+    "json-schema-empty-strings": "^1.0.5"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "size-limit": [
     {
@@ -92,11 +100,5 @@
       "limit": "10 KB",
       "path": "dist/json-schema-prepare-data-for-form.esm.js"
     }
-  ],
-  "typings": "dist/index.d.ts",
-  "version": "1.0.2",
-  "dependencies": {
-    "clean-deep": "^3.4.0",
-    "lodash.mergewith": "^4.6.2"
-  }
+  ]
 }
