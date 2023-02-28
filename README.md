@@ -29,7 +29,7 @@ Other deep merge implementations (e.g. `[_.merge()](https://lodash.com/docs/4.17
     }
 ```
 
-The resulting array has duplicate elements and is longer than the provided data. 
+The resulting array has duplicate elements and is longer than the provided data.
 With `jsonSchemaDataMerge()` the last array overwrites the provided data:
 
 ```py
@@ -44,8 +44,8 @@ With `jsonSchemaDataMerge()` the last array overwrites the provided data:
 ```
 
 Prepare Data for editing in [react-json-schema-form](https://github.com/rjsf-team/react-jsonschema-form)
-has some special requirements: 
-During validation empty strings are validated against `pattern`. 
+has some special requirements:
+During validation empty strings are validated against `pattern`.
 But for example `""` is no valid E-Mail address.
 So empty strings musst be `undefined` during rjsf validation,
 to allow fields with empty strings to pass validation (unless the field is required).
@@ -53,7 +53,6 @@ to allow fields with empty strings to pass validation (unless the field is requi
 See [Issue 402](https://github.com/rjsf-team/react-jsonschema-form/issues/402),
 [Issue 605](https://github.com/rjsf-team/react-jsonschema-form/issues/605) and
 [retool Issue 4837](https://community.retool.com/t/json-schema-form-ui-emptyvalue-issues/4837).
-
 
 ```js
 import { prepareDataForForm, prepareDataForRjsf } from '../src/index'
@@ -63,9 +62,8 @@ const finalData = prepareDataForForm(schema, inputData)
 const finalDataForRjsf = prepareDataForRjsf(schema, inputData)
 ```
 
-See [the tests](https://github.com/mdornseif/json-schema-prepare-data-for-form/blob/main/test/index.test.ts) 
+See [the tests](https://github.com/mdornseif/json-schema-prepare-data-for-form/blob/main/test/index.test.ts)
 for additional demonstration on the merging issues.
-
 
 # See also:
 
@@ -73,3 +71,4 @@ for additional demonstration on the merging issues.
 - [json-schema-empty-strings](https://www.npmjs.com/package/json-schema-empty-strings)
 - [json-schema-default](https://www.npmjs.com/package/json-schema-default)
 - [react-json-schema-form](https://github.com/rjsf-team/react-jsonschema-form)
+- [graphql-clean-diff](https://www.npmjs.com/package/graphql-clean-diff)
