@@ -4,15 +4,15 @@ on:
     branches:
       - master
       - main
-permissions:
-  actions: read
-  checks: read
-  contents: write
-  deployments: write
-  issues: write
-  packages: write
-  pages: write
-  statuses: write
+# permissions:
+#   actions: read
+#   checks: read
+#   contents: write
+#   deployments: write
+#   issues: write
+#   packages: write
+#   pages: write
+#   statuses: write
 
 jobs:
   test:
