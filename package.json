@@ -30,7 +30,7 @@
     "react-json-schema-form",
     "defaults"
   ],
-  "homepage": "https://json-schema-prepare-data-for-form/",
+  "homepage": "https://github.com/mdornseif/json-schema-prepare-data-for-form/",
   "husky": {
     "hooks": {
       "pre-commit": "dts lint"
@@ -68,7 +68,9 @@
       "next"
     ]
   },
-  "repository": "git@github.com:mdornseif/json-schema-prepare-data-for-form.git",
+  "repository":{     "type": "git",
+  "url":  "https://github.com/mdornseif/json-schema-prepare-data-for-form.git"
+},
   "scripts": {
     "analyze": "size-limit --why",
     "build": "dts build",
