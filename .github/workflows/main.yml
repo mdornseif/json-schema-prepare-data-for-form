@@ -4,15 +4,15 @@ on:
     branches:
       - master
       - main
-# permissions:
-#   actions: read
-#   checks: read
-#   contents: write
-#   deployments: write
-#   issues: write
-#   packages: write
-#   pages: write
-#   statuses: write
+permissions:
+  actions: read
+  checks: read
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
+  pages: write
+  statuses: write
 
 jobs:
   test:
@@ -91,7 +91,11 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
 
+      - name: Build documentation
+        run: yarn run doc:build
       - name: Deploy documentation to GitHub Pages
-        run: yarn run doc:build ; yarn run doc:publish
+        run: yarn run doc:publish
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: github-actions-bot
+          EMAIL: support+actions@github.com>
