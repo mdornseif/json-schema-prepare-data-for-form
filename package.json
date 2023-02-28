@@ -24,6 +24,11 @@
     "dist",
     "src"
   ],
+  "keywords": [
+    "jsonschema",
+    "rjsf",
+    "react-json-schema-form",
+    "defaults"],
   "homepage": "https://json-schema-prepare-data-for-form/",
   "husky": {
     "hooks": {
@@ -86,14 +91,9 @@
     }
   ],
   "typings": "dist/index.d.ts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "dependencies": {
     "clean-deep": "^3.4.0",
-    "json-schema": "^0.4.0",
-    "json-schema-default": "^1.0.1",
-    "json-schema-empty-arrays": "^1.0.1",
-    "json-schema-empty-strings": "^1.0.5",
-    "lodash.merge": "^4.6.2",
     "lodash.mergewith": "^4.6.2"
   }
 }

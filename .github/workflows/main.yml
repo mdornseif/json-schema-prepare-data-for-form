@@ -1,5 +1,4 @@
 name: Test, Build, and release
-on:
 on: [push]
     branches:
       - master

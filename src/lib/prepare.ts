@@ -12,18 +12,12 @@ import { jsonDefault } from 'json-schema-default'
 import { jsonEmptyArrays } from 'json-schema-empty-arrays'
 import { jsonEmptyStrings } from 'json-schema-empty-strings'
 
+/** Prepare Data for editing in a `<form>` using a JSON-Schema.
+ *
+ * Defaults are applied and empty strings and arrays are added where needed.
+ * `null` values are removed so they are `undefined`.
+ **/
 export function prepareDataForForm<T>(schema: JSONSchema7, inData: T): T {
-  // null etc aus den übergebenen Daten entfernen
-  // das schwierige ist, dass bei der Schema-Validierung leere Strings auf
-  // die Feld Pattern geprüft werden. Ein "" ist zB keien gültige E-Mail Adresse
-  // Leere strings müssen bei der Validierung `undefined` sein.
-  // Also nehmen wir die raus.
-  // Das Problem ist, dass dann die Defaults angewendet werden.
-  // Wir können bei diesem Vorgehen kein leeres Feld haben,
-  // wenn für dieses Feld ein Default existiert.
-  // Siehe https://github.com/rjsf-team/react-jsonschema-form/issues/402
-  // https://community.retool.com/t/json-schema-form-ui-emptyvalue-issues/4837
-  // https://github.com/rjsf-team/react-jsonschema-form/issues/605
   return jsonSchemaDataMerge({}, [
     jsonEmptyStrings(schema) as any,
     jsonEmptyArrays(schema) as any,
@@ -33,7 +27,7 @@ export function prepareDataForForm<T>(schema: JSONSchema7, inData: T): T {
       nullValues: true,
       emptyArrays: false,
       emptyObjects: true,
-    }) as any
+    }) as any,
   ]) as T
 }
 

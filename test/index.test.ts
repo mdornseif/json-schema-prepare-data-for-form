@@ -63,42 +63,6 @@ const TESTSCHEMA: JSONSchema7 = {
   },
 }
 
-test('defaults', () => {
-  const m1 = merge({}, jsonDefault(TESTSCHEMA))
-  expect(m1).toMatchInlineSnapshot(`
-    {
-      "annotationDefault": "bar",
-      "annotationRequiredDefault": "foo",
-      "artworksprachen": [
-        "Deutsch",
-        "Englisch",
-        "Italienisch",
-      ],
-      "designator": "TST00000",
-      "ist_aktiv": true,
-    }
-  `)
-})
-test('empty arrays', () => {
-  expect(jsonEmptyArrays(TESTSCHEMA)).toMatchInlineSnapshot(`
-  {
-    "artworksprachen": [],
-  }
-`)
-})
-test('empty strings', () => {
-  expect(jsonEmptyStrings(TESTSCHEMA)).toMatchInlineSnapshot(`
-    {
-      "annotation": "",
-      "annotationDefault": "",
-      "annotationRequired": "",
-      "annotationRequiredDefault": "",
-      "artworksprachen": {},
-      "designator": "",
-    }
-  `)
-})
-
 test('Lodash merge works somewhat different than expected', () => {
   expect(merge({ l: [1, 2, 3, 4] }, { l: [4, 5, 6] })).toMatchInlineSnapshot(`
   {
@@ -121,6 +85,43 @@ test('jsonSchemaDataMerge does the right thing', () => {
     ],
   }
 `)
+})
+
+test('empty arrays', () => {
+  expect(jsonEmptyArrays(TESTSCHEMA)).toMatchInlineSnapshot(`
+  {
+    "artworksprachen": [],
+  }
+`)
+})
+test('empty strings', () => {
+  expect(jsonEmptyStrings(TESTSCHEMA)).toMatchInlineSnapshot(`
+    {
+      "annotation": "",
+      "annotationDefault": "",
+      "annotationRequired": "",
+      "annotationRequiredDefault": "",
+      "artworksprachen": {},
+      "designator": "",
+    }
+  `)
+})
+
+test('defaults', () => {
+  const m1 = merge({}, jsonDefault(TESTSCHEMA))
+  expect(m1).toMatchInlineSnapshot(`
+    {
+      "annotationDefault": "bar",
+      "annotationRequiredDefault": "foo",
+      "artworksprachen": [
+        "Deutsch",
+        "Englisch",
+        "Italienisch",
+      ],
+      "designator": "TST00000",
+      "ist_aktiv": true,
+    }
+  `)
 })
 
 test('prepareDataForForm', () => {
