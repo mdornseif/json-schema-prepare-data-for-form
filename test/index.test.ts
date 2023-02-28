@@ -87,6 +87,39 @@ test('jsonSchemaDataMerge does the right thing', () => {
 `)
 })
 
+
+test('prepareDataForForm', () => {
+  const m6 = prepareDataForForm(TESTSCHEMA, TESTENTITY)
+  expect(m6).toMatchInlineSnapshot(`
+    {
+      "annotation": "",
+      "annotationDefault": "bar",
+      "annotationRequired": "",
+      "annotationRequiredDefault": "foo",
+      "artworksprachen": [
+        "Spanisch",
+      ],
+      "designator": "TST10001",
+      "ist_aktiv": true,
+    }
+  `)
+})
+
+test('prepareDataForRjsf', () => {
+  const m6 = prepareDataForRjsf(TESTSCHEMA, TESTENTITY)
+  expect(m6).toMatchInlineSnapshot(`
+    {
+      "annotationDefault": "bar",
+      "annotationRequiredDefault": "foo",
+      "artworksprachen": [
+        "Spanisch",
+      ],
+      "designator": "TST10001",
+      "ist_aktiv": true,
+    }
+  `)
+})
+
 test('empty arrays', () => {
   expect(jsonEmptyArrays(TESTSCHEMA)).toMatchInlineSnapshot(`
   {
@@ -119,38 +152,6 @@ test('defaults', () => {
         "Italienisch",
       ],
       "designator": "TST00000",
-      "ist_aktiv": true,
-    }
-  `)
-})
-
-test('prepareDataForForm', () => {
-  const m6 = prepareDataForForm(TESTSCHEMA, TESTENTITY)
-  expect(m6).toMatchInlineSnapshot(`
-    {
-      "annotation": "",
-      "annotationDefault": "bar",
-      "annotationRequired": "",
-      "annotationRequiredDefault": "foo",
-      "artworksprachen": [
-        "Spanisch",
-      ],
-      "designator": "TST10001",
-      "ist_aktiv": true,
-    }
-  `)
-})
-
-test('prepareDataForRjsf', () => {
-  const m6 = prepareDataForRjsf(TESTSCHEMA, TESTENTITY)
-  expect(m6).toMatchInlineSnapshot(`
-    {
-      "annotationDefault": "bar",
-      "annotationRequiredDefault": "foo",
-      "artworksprachen": [
-        "Spanisch",
-      ],
-      "designator": "TST10001",
       "ist_aktiv": true,
     }
   `)

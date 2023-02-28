@@ -63,6 +63,10 @@ const finalData = prepareDataForForm(schema, inputData)
 const finalDataForRjsf = prepareDataForRjsf(schema, inputData)
 ```
 
+See [the tests](https://github.com/mdornseif/json-schema-prepare-data-for-form/blob/main/test/index.test.ts) 
+for additional demonstration on the merging issues.
+
+
 # See also:
 
 - [json-schema-empty-array](https://www.npmjs.com/package/json-schema-empty-array)
