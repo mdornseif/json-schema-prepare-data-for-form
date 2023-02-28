@@ -92,7 +92,7 @@
     }
   ],
   "typings": "dist/index.d.ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "clean-deep": "^3.4.0",
     "lodash.mergewith": "^4.6.2"
