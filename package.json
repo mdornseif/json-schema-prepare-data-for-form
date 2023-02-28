@@ -10,7 +10,7 @@
   "homepage": "https://github.com/mdornseif/json-schema-prepare-data-for-form/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mdornseif/json-schema-prepare-data-for-form.git"
+    "url": "git@github.com:mdornseif/json-schema-prepare-data-for-form.git"
   },
   "license": "MIT",
   "author": "Dr. Maximillian Dornseif",
