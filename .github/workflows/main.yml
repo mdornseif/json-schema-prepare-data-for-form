@@ -1,5 +1,6 @@
-name: Test, Build, and release
-on: [push]
+name: Test, Build, and Release
+on:
+  push:
     branches:
       - master
       - main
