@@ -88,6 +88,7 @@
     "json-schema-empty-arrays": "^1.0.1",
     "json-schema-empty-strings": "^1.0.5"
   },
+  "packageManager": "yarn@1.22.19",
   "engines": {
     "node": ">=12"
   },
